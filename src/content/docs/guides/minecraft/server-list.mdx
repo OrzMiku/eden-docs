@@ -1,0 +1,16 @@
+---
+title: 我的世界服务器列表
+description: 我的世界服务器列表
+---
+
+import ServerCard from './components/ServerCard.astro';
+import { CardGrid } from '@astrojs/starlight/components';
+import Servers from './data/servers.ts'
+
+
+
+<CardGrid>
+    {Servers.map((server) => (
+        <ServerCard server={server} />
+    ))}
+</CardGrid>

@@ -6,22 +6,18 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: '伊甸园文档',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/OrzMiku/eden-docs',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: '向导',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: '欢迎', link: '/guides/' },
+						{ label: '我的世界服务器', link: '/guides/minecraft/server-list' },
 					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+				}
 			],
 		}),
 	],

@@ -1,0 +1,35 @@
+---
+import type { MinecraftServerType } from '../types'
+import { Card, Badge, LinkButton } from '@astrojs/starlight/components';
+
+interface Props {
+    server: MinecraftServerType,
+    index: number
+}
+
+const { server } = Astro.props
+---
+
+<Card title={server.name} icon='laptop'>
+    <Badge text={server.version} variant='tip' size='medium'></Badge>
+    {server.tags && server.tags.map((tag) => (
+        <Badge text={tag} variant='success' size='medium'></Badge>
+    ))}
+    <div class="body">
+        <blockquote>{server.description}</blockquote>
+        <p>地址：<span>{ server.address }</span></p>
+        {server.clientDownloadLink && <LinkButton class="download-btn" href={server.clientDownloadLink} style="border-radius: 0.25rem; margin-bottom: 0;">客户端下载</LinkButton>}
+    </div>
+    
+</Card>
+
+<style>
+    .body {
+        margin-top: 1rem;
+    }
+
+    #address {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+</style>
