@@ -17,6 +17,12 @@ export default defineConfig({
 						{ label: '欢迎', link: '/guides/' },
 						{ label: '我的世界服务器', link: '/guides/minecraft/server-list' },
 					],
+				},
+				{
+					label: '惊艳收藏',
+					autogenerate: {
+						directory: '/awesome',
+					},
 				}
 			],
 		}),
